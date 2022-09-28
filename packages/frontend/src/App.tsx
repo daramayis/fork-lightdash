@@ -7,6 +7,7 @@ import '@blueprintjs/select/lib/css/blueprint-select.css';
 import '@blueprintjs/table/lib/css/table.css';
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import {
     BrowserRouter as Router,
     Redirect,
@@ -46,7 +47,6 @@ import { AppProvider } from './providers/AppProvider';
 import { DashboardProvider } from './providers/DashboardProvider';
 import { TrackingProvider, TrackPage } from './providers/TrackingProvider';
 import { PageName } from './types/Events';
-
 const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
@@ -299,6 +299,7 @@ const App = () => (
                     </TrackingProvider>
                 </AppProvider>
             </HotkeysProvider>
+            <ReactQueryDevtools initialIsOpen={true} />
         </QueryClientProvider>
     </>
 );
